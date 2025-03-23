@@ -15,8 +15,7 @@
 <img align="center" alt="" height="70" width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-plain-wordmark.svg">
 <img align="center" alt="" height="70" width="80" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg">
 <img align="center" alt="" height="50" width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg">
-<img align="center" alt="" height="50" width="60" src="">
-     
+
 </div>
    
 ##
