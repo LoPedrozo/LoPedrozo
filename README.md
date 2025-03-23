@@ -1,11 +1,11 @@
 ## Heyy! My name is Lorenzo and I am currently a software engineering student.
 
-<div>
+<div style="display: inline_block"> <br>
 <a href="https://github.com/LoPedrozo">
-<img height="200em" align="center" src="https://github-readme-stats.vercel.app/api?username=LoPedrozo&rank_icon=github&theme=highcontrast&show_icons=true">
+<img height="200" align="center" src="https://github-readme-stats.vercel.app/api?username=LoPedrozo&rank_icon=github&theme=highcontrast&show_icons=true">
 </a>
 <a href="https://github.com/LoPedrozo">
-<img height="200em" align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=LoPedrozo&layout=compact&theme=highcontrast">
+<img height="200" align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=LoPedrozo&layout=compact&theme=highcontrast">
 <a/>
 <div/> 
 
