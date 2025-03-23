@@ -19,3 +19,4 @@
 </div>
    
 ##
+![snake gif](https://github.com/LoPedrozo/LoPedrozo/blob/output/github-contribution-grid-snake.svg)
