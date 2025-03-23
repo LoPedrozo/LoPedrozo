@@ -27,4 +27,5 @@ jobs:
           add: "github-contribution-grid-snake.svg github-contribution-grid-snake-dark.svg"
           author_name: "GitHub Actions"
           author_email: "github-actions[bot]@users.noreply.github.com"
-          github_token: ${{ secrets.GITHUB_TOKEN }}  # Usando o token correto
+          github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}  # Usando o PAT
+
