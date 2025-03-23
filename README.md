@@ -22,6 +22,4 @@
   <img height="70" width="80" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg">
   <img height="50" width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg">
 </p>
-<p align="center">
-  <img src="https://github.com/LoPedrozo/LoPedrozo/blob/output/github-contribution-grid-snake.svg" alt="snake animation">
-</p>
+
