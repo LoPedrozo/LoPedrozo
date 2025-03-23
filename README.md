@@ -1,6 +1,6 @@
 ## Heyy! My name is Lorenzo and I am currently a software engineering student.
 
-<div style="display: inline_block"> <br>
+<div> 
 <a href="https://github.com/LoPedrozo">
 <img height="200" align="center" src="https://github-readme-stats.vercel.app/api?username=LoPedrozo&rank_icon=github&theme=highcontrast&show_icons=true">
 </a>
