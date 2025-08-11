@@ -5,7 +5,7 @@
     <img height="200" src="https://github-readme-stats.vercel.app/api?username=LoPedrozo&rank_icon=github&theme=dracula&show_icons=true">
   </a>
   <a href="https://github.com/LoPedrozo">
-    <img height="200" src="https://github-readme-stats.vercel.app/api/top-langs/?username=LoPedrozo&layout=compact&theme=dracula">
+    <img height="400" src="https://github-readme-stats.vercel.app/api/top-langs/?username=LoPedrozo&layout=compact&theme=dracula">
   </a>
 </p>
 
