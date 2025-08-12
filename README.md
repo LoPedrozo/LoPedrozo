@@ -10,7 +10,7 @@
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white" alt="LinkedIn Badge">
   </a>
   <a href="mailto:lorenzopedrozo1106@gmail.com">
-    <img src="https://img.shields.io/badge/Email-SEUEMAIL%40example.com-red?logo=gmail&logoColor=white" alt="Email Badge">
+    <img src="https://img.shields.io/badge/lorenzopedrozo1106@gmail.com-red?logo=gmail&logoColor=white" alt="Email Badge">
   </a>
   <img src="https://img.shields.io/badge/Open%20to-Internship-36b37e" alt="Open to Internship">
 </p>
