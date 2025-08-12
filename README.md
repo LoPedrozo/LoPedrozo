@@ -1,22 +1,30 @@
-## Heyy! My name is Lorenzo and I am currently a software engineering student.
-
+<!-- Title -->
+<h1 align="center">Heyy! I'm Lorenzo Pedrozo 👋</h1>
 <p align="center">
-  <a href="https://github.com/LoPedrozo">
-    <img height="500" width="500" src="https://github-readme-stats.vercel.app/api?username=LoPedrozo&rank_icon=github&theme=dracula&show_icons=true">
-  </a>
-  <a href="https://github.com/LoPedrozo">
-    <img height="400" width="380" src="https://github-readme-stats.vercel.app/api/top-langs/?username=LoPedrozo&layout=compact&theme=dracula">
-  </a>
+  Software Engineering student • Universidade Positivo • Focused on Python, Chatbots & AI
 </p>
 
-
-
-<h2 align="center">✨ Thank you for coming here!! ✨</h2>
-
-
-
-### 🛠️ Tech Stack
+<!-- Social / Contact -->
 <p align="center">
+  <a href="https://www.linkedin.com/in/lorenzo-pedrozo-37b3192a9">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white" alt="LinkedIn Badge">
+  </a>
+  <a href="mailto:SEUEMAIL@example.com">
+    <img src="https://img.shields.io/badge/Email-SEUEMAIL%40example.com-red?logo=gmail&logoColor=white" alt="Email Badge">
+  </a>
+  <img src="https://img.shields.io/badge/Open%20to-Internship-36b37e" alt="Open to Internship">
+</p>
+
+---
+
+### 👨‍💻 About me
+- 🇧🇷 Software Engineering student based in Curitiba (BR).
+- 🔭 Currently diving deeper into **Python** and **NLP/Chatbots**.
+- 🎯 Goal: land my **first internship** and build useful, real‑world projects.
+- ⚽ Gamer & sports fan; love practical learning and clean code.
+
+### 🛠️ Tech stack
+<p>
   <img height="70" width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-plain-wordmark.svg">
   <img height="70" width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-plain-wordmark.svg">
   <img height="50" width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg">
@@ -24,4 +32,39 @@
   <img height="70" width="80" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg">
   <img height="70" width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg">     
 </p>
+
+### 🧩 Currently learning
+- Data structures & algorithms in Python
+- Basics of NLP (tokenization, embeddings, LLMs) for chatbots
+- Clean Architecture & testing culture
+
+### 🚀 Featured projects
+- **Restaurant Management (Java MVC)** — educational project simulating orders & roles.  
+  `Java • OOP • MVC` — [Repo](https://github.com/LoPedrozo/SEU-REPO)
+- **Python Exercises (Curso em Vídeo)** — fundamentals & small utilities.  
+  `Python • CLI` — [Repo](https://github.com/LoPedrozo/SEU-REPO)
+- **Simple Web Site** — basic HTML/CSS/JS landing page.  
+  `HTML • CSS • JS` — [Repo](https://github.com/LoPedrozo/SEU-REPO)
+- **(WIP) Chatbot Playground** — testing intents, prompts & small LLM flows.  
+  `Python • NLP` — [Repo](https://github.com/LoPedrozo/SEU-REPO)
+
+> Dica: coloque 1 frase de impacto em cada repo (o “porquê” do projeto + o que você aprendeu).
+
+### 📈 GitHub Stats
+<p align="center">
+  <a href="https://github.com/LoPedrozo">
+    <img src="https://github-readme-stats.vercel.app/api?username=LoPedrozo&rank_icon=github&theme=dracula&show_icons=true" alt="GitHub Stats">
+  </a>
+</p>
+<p align="center">
+  <a href="https://github.com/LoPedrozo">
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=LoPedrozo&layout=compact&theme=dracula" alt="Top Langs">
+  </a>
+</p>
+
+---
+
+### 🤝 Let’s connect
+Curious about my projects or have an internship opportunity?  
+**DM me on LinkedIn** or send me an **email** — I’d love to chat!
 
