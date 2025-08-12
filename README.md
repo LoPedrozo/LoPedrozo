@@ -9,7 +9,7 @@
   <a href="https://www.linkedin.com/in/lorenzo-pedrozo-37b3192a9">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white" alt="LinkedIn Badge">
   </a>
-  <a href="mailto:SEUEMAIL@example.com">
+  <a href="mailto:lorenzopedrozo1106@gmail.com">
     <img src="https://img.shields.io/badge/Email-SEUEMAIL%40example.com-red?logo=gmail&logoColor=white" alt="Email Badge">
   </a>
   <img src="https://img.shields.io/badge/Open%20to-Internship-36b37e" alt="Open to Internship">
@@ -40,15 +40,11 @@
 
 ### 🚀 Featured projects
 - **Restaurant Management (Java MVC)** — educational project simulating orders & roles.  
-  `Java • OOP • MVC` — [Repo](https://github.com/LoPedrozo/SEU-REPO)
+  `Java • OOP • MVC` — [Repo]([https://github.com/LoPedrozo/SEU-REPO](https://github.com/acairesm/Burger_Brothers_Brasil-))
 - **Python Exercises (Curso em Vídeo)** — fundamentals & small utilities.  
-  `Python • CLI` — [Repo](https://github.com/LoPedrozo/SEU-REPO)
+  `Python • CLI` — [Repo]([https://github.com/LoPedrozo/SEU-REPO](https://github.com/LoPedrozo/Python-Training))
 - **Simple Web Site** — basic HTML/CSS/JS landing page.  
-  `HTML • CSS • JS` — [Repo](https://github.com/LoPedrozo/SEU-REPO)
-- **(WIP) Chatbot Playground** — testing intents, prompts & small LLM flows.  
-  `Python • NLP` — [Repo](https://github.com/LoPedrozo/SEU-REPO)
-
-> Dica: coloque 1 frase de impacto em cada repo (o “porquê” do projeto + o que você aprendeu).
+  `HTML • CSS • JS` — [Repo]([https://github.com/LoPedrozo/SEU-REPO](https://github.com/LoPedrozo/My-First-Dev-Web-Project))
 
 ### 📈 GitHub Stats
 <p align="center">
