@@ -40,11 +40,11 @@
 
 ### 🚀 Featured projects
 - **Restaurant Management (Java MVC)** — educational project simulating orders & roles.  
-  `Java • OOP • MVC` — [Repo]([https://github.com/LoPedrozo/SEU-REPO](https://github.com/acairesm/Burger_Brothers_Brasil-))
+  `Java • OOP • MVC` — [Repository](https://github.com/acairesm/Burger_Brothers_Brasil-)
 - **Python Exercises (Curso em Vídeo)** — fundamentals & small utilities.  
-  `Python • CLI` — [Repo]([https://github.com/LoPedrozo/SEU-REPO](https://github.com/LoPedrozo/Python-Training))
+  `Python • CLI` — [Repository](https://github.com/LoPedrozo/Python-Training)
 - **Simple Web Site** — basic HTML/CSS/JS landing page.  
-  `HTML • CSS • JS` — [Repo]([https://github.com/LoPedrozo/SEU-REPO](https://github.com/LoPedrozo/My-First-Dev-Web-Project))
+  `HTML • CSS • JS` — [Repository](https://github.com/LoPedrozo/My-First-Dev-Web-Project)
 
 ### 📈 GitHub Stats
 <p align="center">
