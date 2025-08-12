@@ -47,14 +47,13 @@
   `HTML • CSS • JS` — [Repository](https://github.com/LoPedrozo/My-First-Dev-Web-Project)
 
 ### 📈 GitHub Stats
+
 <p align="center">
   <a href="https://github.com/LoPedrozo">
-    <img src="https://github-readme-stats.vercel.app/api?username=LoPedrozo&rank_icon=github&theme=dracula&show_icons=true" alt="GitHub Stats">
+    <img height="180em" src="https://github-readme-stats.vercel.app/api?username=LoPedrozo&rank_icon=github&theme=tokyonight&show_icons=true" alt="GitHub Stats"/>
   </a>
-</p>
-<p align="center">
   <a href="https://github.com/LoPedrozo">
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=LoPedrozo&layout=compact&theme=dracula" alt="Top Langs">
+    <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=LoPedrozo&layout=compact&theme=tokyonight" alt="Top Langs"/>
   </a>
 </p>
 
