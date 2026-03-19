@@ -1,61 +1,61 @@
-<!-- Title -->
-<h1 align="center">Heyy! I'm Lorenzo Pedrozo 👋</h1>
-<p align="center">
-  Software Engineering student • Universidade Positivo • Focused on Python, Chatbots & AI
-</p>
+# Heyy! I'm Lorenzo Pedrozo 👋
 
-<!-- Social / Contact -->
-<p align="center">
-  <a href="https://www.linkedin.com/in/lorenzo-pedrozo-37b3192a9">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white" alt="LinkedIn Badge">
-  </a>
-  <a href="mailto:lorenzopedrozo1106@gmail.com">
-    <img src="https://img.shields.io/badge/lorenzopedrozo1106@gmail.com-red?logo=gmail&logoColor=white" alt="Email Badge">
-  </a>
-  <img src="https://img.shields.io/badge/Open%20to-Internship-36b37e" alt="Open to Internship">
-</p>
+Software Engineering student • Universidade Positivo • Full Stack Developer in training • Exploring AI, Chatbots & Prompt Engineering
+
+[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/lorenzo-pedrozo-37b3192a9)
+[![Email Badge](https://img.shields.io/badge/lorenzopedrozo1106@gmail.com-red?logo=gmail&logoColor=white)](mailto:lorenzopedrozo1106@gmail.com)
+[![Open to Internship](https://img.shields.io/badge/Open%20to-Internship-36b37e)]()
 
 ---
 
 ### 👨‍💻 About me
+
 - 🇧🇷 Software Engineering student based in Curitiba (BR).
-- 🔭 Currently diving deeper into **Python** and **NLP/Chatbots**.
-- 🎯 Goal: land my **first internship** and build useful, real‑world projects.
+- 🔭 Building projects across **front-end** and **back-end**, and exploring **AI & Chatbots**.
+- 🎯 Goal: land my **first internship** in web development, back-end, or AI.
 - ⚽ Gamer & sports fan; love practical learning and clean code.
 
 ### 🛠️ Tech stack
-<p>
-  <img height="70" width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-plain-wordmark.svg">
-  <img height="70" width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-plain-wordmark.svg">
-  <img height="50" width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg">
-  <img height="70" width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg">
-  <img height="70" width="80" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg">
-  <img height="70" width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg">     
-</p>
+
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" width="40" height="40"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" width="40" height="40"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg" width="40" height="40"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-plain-wordmark.svg" width="40" height="40"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-plain-wordmark.svg" width="40" height="40"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" width="40" height="40"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" width="40" height="40"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg" width="40" height="40"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" width="40" height="40"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dot-net/dot-net-plain-wordmark.svg" width="40" height="40"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" width="40" height="40"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" width="40" height="40"/>
 
 ### 🧩 Currently learning
-- Data structures & algorithms in Python
+
+- React + TypeScript for modern front-end development
+- ASP.NET Core & Entity Framework for back-end APIs
 - Basics of NLP (tokenization, embeddings, LLMs) for chatbots
 - Clean Architecture & testing culture
 
 ### 🚀 Featured projects
-- **Restaurant Management (Java MVC)** — educational project simulating orders & roles.  
-  `Java • OOP • MVC` — [Repository](https://github.com/acairesm/Burger_Brothers_Brasil-)
-- **Python Exercises (Curso em Vídeo)** — fundamentals & small utilities.  
-  `Python • CLI` — [Repository](https://github.com/LoPedrozo/Python-Training)
-- **Simple Web Site** — basic HTML/CSS/JS landing page.  
-  `HTML • CSS • JS` — [Repository](https://github.com/LoPedrozo/My-First-Dev-Web-Project)
+
+| Project | Stack | Description |
+|---------|-------|-------------|
+| **[Fadary Beauty Showcase](https://github.com/LoPedrozo/fadary-beauty-showcase)** | React · TypeScript · Tailwind · Vite · Framer Motion | Showcase website for a beauty brand. Responsive design, deployed on Vercel. |
+| **[API de Tarefas](https://github.com/LoPedrozo/API_de_Tarefas)** | C# · ASP.NET Core · Entity Framework · SQLite · HTML/CSS/JS | Full stack task management API with REST endpoints and integrated front-end. |
+| **[BurguerBrothersBrasil](https://github.com/LoPedrozo/BurguerBrothersBrasil)** | Java · OOP · MVC | Restaurant management system with CRUD for clients, products and orders. |
 
 ### 📈 GitHub Stats
 
-<p align="center">
-  <a href="https://github.com/LoPedrozo">
-    <img height="180em" src="https://github-readme-stats.vercel.app/api?username=LoPedrozo&rank_icon=github&theme=tokyonight&show_icons=true" alt="GitHub Stats"/>
-  </a>
-  <a href="https://github.com/LoPedrozo">
-    <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=LoPedrozo&layout=compact&theme=tokyonight" alt="Top Langs"/>
-  </a>
-</p>
+[![GitHub Stats](https://github-readme-stats.vercel.app/api?username=LoPedrozo&rank_icon=github&theme=tokyonight&show_icons=true)](https://github.com/LoPedrozo)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=LoPedrozo&layout=compact&theme=tokyonight)](https://github.com/LoPedrozo)
+
+---
+
+### 🤝 Let's connect
+
+Curious about my projects or have an internship opportunity?
+**DM me on LinkedIn** or send me an **email** — I'd love to chat!
 
 ---
 
