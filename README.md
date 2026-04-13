@@ -46,9 +46,4 @@ Software Engineering student • Universidade Positivo • Full Stack Developer 
 Curious about my projects or have an internship opportunity?
 **DM me on LinkedIn** or send me an **email** — I'd love to chat!
 
----
-
-### 🤝 Let’s connect
-Curious about my projects or have an internship opportunity?  
-**DM me on LinkedIn** or send me an **email** — I’d love to chat!
 
