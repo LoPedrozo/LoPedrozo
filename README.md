@@ -1,6 +1,6 @@
 # Heyy! I'm Lorenzo Pedrozo 👋
 
-Software Engineering student • Universidade Positivo • Full Stack Developer in training • Exploring AI, Chatbots & Prompt Engineering
+Software Engineering Student • Full Stack Developer • React | TypeScript | C# 
 
 [![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/lorenzo-pedrozo-37b3192a9)
 [![Email Badge](https://img.shields.io/badge/lorenzopedrozo1106@gmail.com-red?logo=gmail&logoColor=white)](mailto:lorenzopedrozo1106@gmail.com)
@@ -10,29 +10,29 @@ Software Engineering student • Universidade Positivo • Full Stack Developer 
 
 ### 👨‍💻 About me
 
-- 🇧🇷 Software Engineering student based in Curitiba (BR).
-- 🔭 Building projects across **front-end** and **back-end**, and exploring **AI & Chatbots**.
-- 🎯 Goal: land my **first internship** in web development, back-end, or AI.
-- ⚽ Gamer & sports fan; love practical learning and clean code.
+- 🇧🇷 Software Engineering student (2024-2028) based in Curitiba, Brazil.
+- 🔭 Building end-to-end web applications, with a strong focus on modern **Front-end architectures** (React/TS) and robust **REST APIs** (C#).
+- 🎯 Goal: Land my **first internship or junior role** in software development to apply my skills in a real-world team environment.
+- ⚡ Fun fact: When I'm not coding, I'm probably testing the limits of my custom PC build on AAA games or following sports.
 
 ### 🛠️ Tech stack
 
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-plain-wordmark.svg" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-plain-wordmark.svg" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dot-net/dot-net-plain-wordmark.svg" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" width="40" height="40"/>
-
-### 🧩 Currently learning
-
-- React + TypeScript for modern front-end development
-- ASP.NET Core & Entity Framework for back-end APIs
-- Basics of NLP (tokenization, embeddings, LLMs) for chatbots
-- Clean Architecture & testing culture
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dot-net/dot-net-plain-wordmark.svg" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" width="40" height="40"/>
 
 ### 🚀 Featured projects
 
 | Project | Stack | Description |
 |---------|-------|-------------|
-| **[Fadary Beauty Showcase](https://github.com/LoPedrozo/fadary-beauty-showcase)** | React · TypeScript · Tailwind · Vite · Framer Motion | Showcase website for a beauty brand. Responsive design, deployed on Vercel. |
-| **[API de Tarefas](https://github.com/LoPedrozo/API_de_Tarefas)** | C# · ASP.NET Core · Entity Framework · SQLite · HTML/CSS/JS | Full stack task management API with REST endpoints and integrated front-end. |
-| **[BurguerBrothersBrasil](https://github.com/LoPedrozo/BurguerBrothersBrasil)** | Java · OOP · MVC | Restaurant management system with CRUD for clients, products and orders. |
+| **[Novant Football Gear](https://github.com/LoPedrozo/novant-football-gear)** | React · TypeScript · Supabase · Tailwind | E-commerce SPA featuring a dynamic catalog, hybrid cart synchronization, and OAuth authentication. |
+| **[Minhas Finanças](https://github.com/LoPedrozo/financias-app)** | React · TypeScript · Supabase · Recharts | Personal finance dashboard with interactive charts, categorized entries, and Row Level Security (RLS) data isolation. |
+| **[Task Management API](https://github.com/LoPedrozo/API_de_Tarefas)** | C# · ASP.NET Core · Entity Framework · SQLite | Modular RESTful API with full CRUD operations, database integration, and separation of concerns. |
+| **[Fadary Beauty Showcase](https://github.com/LoPedrozo/fadary-beauty-showcase)** | React · TypeScript · Framer Motion · Vite | Highly responsive institutional website focused on UI/UX, reusable components, and smooth animations. |
+
+### 🧩 Currently learning
+
+- Advanced state management and data fetching (TanStack Query)
+- Backend architecture, API design, and relational databases
+- Clean Code practices and Software Architecture principles
 
 ### 📈 GitHub Stats
 
@@ -43,7 +43,6 @@ Software Engineering student • Universidade Positivo • Full Stack Developer 
 
 ### 🤝 Let's connect
 
-Curious about my projects or have an internship opportunity?
+Curious about my projects or have an opportunity in mind?
 **DM me on LinkedIn** or send me an **email** — I'd love to chat!
-
 
