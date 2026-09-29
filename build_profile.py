@@ -54,6 +54,11 @@ PROFILE = [
     ("motto", "learn by building → ship it → iterate"),
 ]
 PROJECTS = [
+    dict(title="LIGA APP", tag="PROJECT MANAGER · MVP OCT 2026", wide=True,
+         desc="MVP for Formigueiro Metais, a metals company: calculates and corrects the chemical composition of "
+              "secondary aluminium alloys, with AI-generated explanations. As project manager I co-lead a 9-person "
+              "team in Scrumban: client relationship, sprint ceremonies, code review, QA and deploy.",
+         stack="React · TypeScript · FastAPI · Supabase · SciPy · Gemini"),
     dict(title="NOVANT FOOTBALL GEAR", tag="E-COMMERCE · DEPLOYED", wide=True,
          desc="E-commerce SPA for football gear: dynamic product catalog, hybrid cart synchronization "
               "(guest + logged-in), OAuth authentication and a responsive checkout flow. Deployed on Vercel.",
