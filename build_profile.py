@@ -66,18 +66,10 @@ PROJECTS = [
          desc="Responsive institutional website for a beauty brand, focused on reusable components "
               "and smooth animations.",
          stack="React · TypeScript · Tailwind · Framer Motion · Vite"),
-    dict(title="TASK MANAGEMENT API", tag="BACKEND",
+    dict(title="TASK MANAGEMENT API", tag="BACKEND", wide=True,
          desc="Modular RESTful API with full CRUD, database integration and clear separation of "
               "concerns between layers.",
          stack="C# · ASP.NET Core · Entity Framework · SQLite"),
-    dict(title="NEXTSTEP+", tag="SCRUM MASTER · UNI",
-         desc="AI platform for university career prep: CV generation, job matching and interview "
-              "simulation. I run the project as Scrum Master in a Scrum + XP + DevOps model.",
-         stack="Scrum · XP · DevOps · AI"),
-    dict(title="FADARY BEAUTY CHATBOT", tag="NEXT BUILD · PYTHON", wide=True,
-         desc="Customer-support chatbot for the Fadary Beauty website: answers questions about products "
-              "and services, built in Python on top of an LLM. The first step of my chatbot / AI engineering path.",
-         stack="Python · LLM APIs · Prompt Engineering"),
 ]
 PRINCIPLES = [
     ("LEARN BY BUILDING", "every new concept turns into a real, deployed project"),
