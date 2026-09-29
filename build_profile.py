@@ -35,7 +35,12 @@ CW = W - 2 * PAD  # content width
 # ── content ──────────────────────────────────────────────────────────────
 NAME = "LORENZO PEDROZO"
 ROLES = "FULL-STACK DEVELOPER // AI & CHATBOTS // TECH INTERN @ MBRF"
-STATUS = "> status: building chatbots & full-stack apps in Curitiba"
+STATUS = "> status: working at MBRF & building full-stack apps in Curitiba"
+# 3D symbol in the header. AI: neural, robot, chat, sparkle, chip.
+# Frontend: atom, brackets, browser, layers. Full-stack & personal: database, football, monogram.
+# Geometric: icosahedron, dodecahedron, octahedron, tetrahedron, cube, tesseract, pyramid, star,
+# prism, gem, globe, torus, geodesic, mobius, dna. Advanced: hypercube (4D), knot, sierpinski.
+SHAPE = "robot"
 PROFILE = [
     ("user", "Lorenzo Garcia Pedrozo"),
     ("role", "Full-Stack Developer (in training)"),
@@ -187,43 +192,278 @@ def wrap(s, chars):
 
 
 # ── 3D wireframe (pre-rendered as animated vector paths) ────────────────
-def icosa():
-    p = (1 + 5 ** 0.5) / 2
-    v = [(-1, p, 0), (1, p, 0), (-1, -p, 0), (1, -p, 0), (0, -1, p), (0, 1, p),
-         (0, -1, -p), (0, 1, -p), (p, 0, -1), (p, 0, 1), (-p, 0, -1), (-p, 0, 1)]
-    e = [(i, j) for i in range(12) for j in range(i + 1, 12)
-         if abs(math.dist(v[i], v[j]) - 2) < 1e-6]
+def _ring(n, r, y=0.0, phase=0.0):
+    return [(r * math.cos(2 * math.pi * k / n + phase), y, r * math.sin(2 * math.pi * k / n + phase)) for k in range(n)]
+
+
+def _loop(start, n):
+    return [(start + k, start + (k + 1) % n) for k in range(n)]
+
+
+def _extrude(outlines, depth, joins=None):
+    """Closed 2D outlines -> front + back copies joined at the corners (or every `joins`-th point)."""
+    v, e = [], []
+    for pts in outlines:
+        n, a = len(pts), len(v)
+        v += [(x, y, -depth / 2) for x, y in pts] + [(x, y, depth / 2) for x, y in pts]
+        e += _loop(a, n) + _loop(a + n, n)
+        e += [(a + k, a + n + k) for k in range(0, n, joins or 1)]
     return v, e
 
 
-def wire_frames(cx, cy, r, frames, spin=1, tilt=0.45, phase=0.0):
-    v, e = icosa()
-    n = math.sqrt(1 + ((1 + 5 ** 0.5) / 2) ** 2)
+def _nearest(v):
+    """Edges between every pair of vertices at the minimum distance (regular polyhedra)."""
+    d = min(math.dist(a, b) for i, a in enumerate(v) for b in v[i + 1:])
+    return [(i, j) for i in range(len(v)) for j in range(i + 1, len(v))
+            if abs(math.dist(v[i], v[j]) - d) < 1e-6]
+
+
+def shape(name, t=0.0):
+    """Vertices + edges; t in [0,1) is the animation phase (only hypercube uses it)."""
+    p = (1 + 5 ** 0.5) / 2
+    if name == "tetrahedron":
+        v = [(1, 1, 1), (1, -1, -1), (-1, 1, -1), (-1, -1, 1)]
+    elif name == "octahedron":
+        v = [(1, 0, 0), (-1, 0, 0), (0, 1, 0), (0, -1, 0), (0, 0, 1), (0, 0, -1)]
+    elif name == "cube":
+        v = [(x, y, z) for x in (-1, 1) for y in (-1, 1) for z in (-1, 1)]
+    elif name == "dodecahedron":
+        v = [(x, y, z) for x in (-1, 1) for y in (-1, 1) for z in (-1, 1)]
+        for a in (-1, 1):
+            for b in (-1, 1):
+                v += [(0, a / p, b * p), (a / p, b * p, 0), (a * p, 0, b / p)]
+    elif name == "tesseract":  # cube inside a cube, corners joined
+        c = [(x, y, z) for x in (-1, 1) for y in (-1, 1) for z in (-1, 1)]
+        v = c + [(x * .5, y * .5, z * .5) for x, y, z in c]
+        e = [(i, j) for i in range(8) for j in range(i + 1, 8) if sum(a != b for a, b in zip(c[i], c[j])) == 1]
+        return v, e + [(i + 8, j + 8) for i, j in e] + [(i, i + 8) for i in range(8)]
+    elif name in ("globe", "torus"):
+        rings, segs = (5, 12) if name == "globe" else (8, 12)
+        v, e = [], []
+        for r in range(rings):
+            for k in range(segs):
+                a = 2 * math.pi * k / segs
+                if name == "globe":
+                    lat = math.pi * (r + 1) / (rings + 1) - math.pi / 2
+                    v.append((math.cos(lat) * math.cos(a), math.sin(lat), math.cos(lat) * math.sin(a)))
+                else:
+                    b = 2 * math.pi * r / rings
+                    R = 1 + .42 * math.cos(b)
+                    v.append((R * math.cos(a), .42 * math.sin(b), R * math.sin(a)))
+                e.append((r * segs + k, r * segs + (k + 1) % segs))
+                if r + 1 < rings or name == "torus":
+                    e.append((r * segs + k, ((r + 1) % rings) * segs + k))
+        if name == "globe":  # poles close the meridians
+            v += [(0, -1, 0), (0, 1, 0)]
+            e += [(len(v) - 2, k) for k in range(segs)] + [(len(v) - 1, (rings - 1) * segs + k) for k in range(segs)]
+        return v, e
+    elif name == "pyramid":
+        v = [(-1, -.7, -1), (1, -.7, -1), (1, -.7, 1), (-1, -.7, 1), (0, 1.1, 0)]
+        return v, _loop(0, 4) + [(k, 4) for k in range(4)]
+    elif name == "star":  # two interlocking tetrahedra
+        t = [(1, 1, 1), (1, -1, -1), (-1, 1, -1), (-1, -1, 1)]
+        v = t + [(-x, -y, -z) for x, y, z in t]
+        return v, [(i + o, j + o) for o in (0, 4) for i in range(4) for j in range(i + 1, 4)]
+    elif name == "prism":
+        v = _ring(6, 1, -.9) + _ring(6, 1, .9)
+        return v, _loop(0, 6) + _loop(6, 6) + [(k, k + 6) for k in range(6)]
+    elif name == "gem":
+        v = _ring(8, .55, .6, math.pi / 8) + _ring(8, 1, .2) + [(0, -1.1, 0)]
+        return v, (_loop(0, 8) + _loop(8, 8) + [(k, 8 + k) for k in range(8)]
+                   + [(k, 8 + (k + 1) % 8) for k in range(8)] + [(8 + k, 16) for k in range(8)])
+    elif name == "dna":  # double helix with base-pair rungs
+        n, v, e = 30, [], []
+        for strand in (0, math.pi):
+            a = len(v)
+            v += [(.55 * math.cos(3 * math.pi * k / n + strand), 2.2 * k / n - 1.1,
+                   .55 * math.sin(3 * math.pi * k / n + strand)) for k in range(n + 1)]
+            e += [(a + k, a + k + 1) for k in range(n)]
+        return v, e + [(k, k + n + 1) for k in range(0, n + 1, 3)]
+    elif name == "atom":  # three electron orbits around a nucleus, React style
+        v, e = [], []
+        for tilt in (0, math.pi / 3, 2 * math.pi / 3):
+            a = len(v)
+            for x, _, z in _ring(28, 1):
+                x, y = x * math.cos(tilt), x * math.sin(tilt)
+                v.append((x, y, z * .38))
+            e += _loop(a, 28)
+        a = len(v)
+        v += [(.16, 0, 0), (-.16, 0, 0), (0, .16, 0), (0, -.16, 0), (0, 0, .16), (0, 0, -.16)]
+        return v, e + [(a + i, a + j) for i in range(6) for j in range(i + 1, 6) if j != i + 1 or i % 2]
+    elif name == "chat":  # speech bubble with typing dots
+        body = [(-1.1, .75), (1.1, .75), (1.25, .6), (1.25, -.45), (1.1, -.6), (-.35, -.6),
+                (-.8, -1.05), (-.75, -.6), (-1.1, -.6), (-1.25, -.45), (-1.25, .6)]
+        dots = [[(cx + .15 * math.cos(2 * math.pi * k / 6), .08 + .15 * math.sin(2 * math.pi * k / 6)) for k in range(6)]
+                for cx in (-.55, 0, .55)]
+        return _extrude([body] + dots, .45)
+    elif name == "monogram":  # extruded "LP" initials
+        L = [(-1.55, 1.1), (-1.05, 1.1), (-1.05, -.65), (-.2, -.65), (-.2, -1.1), (-1.55, -1.1)]
+        P = [(.15, -1.1), (.15, 1.1), (1.05, 1.1), (1.45, .8), (1.45, .25), (1.05, -.05), (.65, -.05), (.65, -1.1)]
+        hole = [(.65, .7), (.95, .7), (1.05, .6), (1.05, .45), (.95, .35), (.65, .35)]
+        return _extrude([L, P, hole], .5)
+    elif name == "hypercube":  # 4D cube rotating through the 4th dimension, then projected
+        c = [(x, y, z, w) for x in (-1, 1) for y in (-1, 1) for z in (-1, 1) for w in (-1, 1)]
+        a = 2 * math.pi * t
+        v = []
+        for x, y, z, w in c:
+            x, w = x * math.cos(a) - w * math.sin(a), x * math.sin(a) + w * math.cos(a)
+            k = 2.6 / (2.6 - w)
+            v.append((x * k, y * k, z * k))
+        return v, [(i, j) for i in range(16) for j in range(i + 1, 16) if sum(p != q for p, q in zip(c[i], c[j])) == 1]
+    elif name == "geodesic":  # icosahedron subdivided once, pushed onto the sphere
+        v, e = shape("icosahedron")
+        es = set(e)
+        faces = [(i, j, k) for i, j in e for k in range(len(v)) if k > j and (i, k) in es and (j, k) in es]
+        v, mid, e = [tuple(c / math.dist((0, 0, 0), q) for c in q) for q in v], {}, []
+        def m(i, j):
+            if (i, j) not in mid:
+                q = [(a + b) / 2 for a, b in zip(v[i], v[j])]
+                v.append(tuple(c / math.dist((0, 0, 0), q) for c in q))
+                mid[(i, j)] = len(v) - 1
+            return mid[(i, j)]
+        for i, j, k in faces:
+            a, b, c = m(i, j), m(j, k), m(i, k)
+            e += [(i, a), (a, j), (j, b), (b, k), (k, c), (c, i), (a, b), (b, c), (c, a)]
+        return v, list(dict.fromkeys(tuple(sorted(x)) for x in e))
+    elif name == "mobius":
+        n, w, v = 36, .38, []
+        for side in (1, -1):
+            for k in range(n):
+                u = 2 * math.pi * k / n
+                r = 1 + side * w * math.cos(u / 2)
+                v.append((r * math.cos(u), side * w * math.sin(u / 2), r * math.sin(u)))
+        e = [(k, k + 1) for k in range(n - 1)] + [(n - 1, n)] + [(n + k, n + k + 1) for k in range(n - 1)] + [(2 * n - 1, 0)]
+        return v, e + [(k, n + k) for k in range(0, n, 2)]
+    elif name == "knot":  # trefoil
+        n, v = 150, []
+        for k in range(n):
+            u = 2 * math.pi * k / n
+            v.append((math.sin(u) + 2 * math.sin(2 * u), math.cos(u) - 2 * math.cos(2 * u), -math.sin(3 * u)))
+        return v, _loop(0, n)
+    elif name == "sierpinski":  # tetrahedron fractal, depth 2
+        v, e, idx = [], [], {}
+        def vid(q):
+            key = tuple(round(c, 6) for c in q)
+            if key not in idx:
+                idx[key] = len(v)
+                v.append(q)
+            return idx[key]
+        def tet(pts, d):
+            if d == 0:
+                ids = [vid(q) for q in pts]
+                e.extend((ids[i], ids[j]) for i in range(4) for j in range(i + 1, 4))
+                return
+            for a in pts:
+                tet([tuple((c1 + c2) / 2 for c1, c2 in zip(a, b)) for b in pts], d - 1)
+        tet([(0, 1.2, 0)] + [(math.cos(k * 2 * math.pi / 3), -.4, math.sin(k * 2 * math.pi / 3)) for k in range(3)], 2)
+        return v, e
+    elif name == "neural":  # a small neural network: 3-5-5-2
+        v, layers = [], []
+        for xi, cnt in zip((-1.2, -.4, .4, 1.2), (3, 5, 5, 2)):
+            layers.append(list(range(len(v), len(v) + cnt)))
+            r = .25 + .13 * cnt
+            v += [(xi, r * math.cos(2 * math.pi * k / cnt + .3), r * math.sin(2 * math.pi * k / cnt + .3)) for k in range(cnt)]
+        return v, [(i, j) for a, b in zip(layers, layers[1:]) for i in a for j in b]
+    elif name == "robot":  # chatbot head
+        sq = lambda x0, y0, x1, y1: [(x0, y0), (x1, y0), (x1, y1), (x0, y1)]
+        head = [(-.8, .7), (.8, .7), (1, .5), (1, -.55), (.8, -.75), (-.8, -.75), (-1, -.55), (-1, .5)]
+        return _extrude([head, sq(-.6, .25, -.2, -.1), sq(.2, .25, .6, -.1), sq(-.4, -.35, .4, -.5),
+                         sq(-.07, .7, .07, 1.05), [(0, 1.05), (.15, 1.2), (0, 1.35), (-.15, 1.2)],
+                         sq(-1.2, .25, -1, -.3), sq(1, .25, 1.2, -.3)], .7)
+    elif name == "chip":  # AI processor
+        v, e = _extrude([[(-.8, .7), (-.7, .8), (.8, .8), (.8, -.8), (-.8, -.8)],
+                         [(-.42, .42), (.42, .42), (.42, -.42), (-.42, -.42)]], .22)
+        for k in (-.5, -.17, .17, .5):  # pins on all four sides
+            for x0, y0, x1, y1 in ((k, .8, k, 1.15), (k, -.8, k, -1.15), (.8, k, 1.15, k), (-.8, k, -1.15, k)):
+                v += [(x0, y0, 0), (x1, y1, 0)]
+                e.append((len(v) - 2, len(v) - 1))
+        return v, e
+    elif name == "sparkle":  # the AI "sparkle" star
+        star = lambda cx, cy, r: [(cx + r * math.cos(u) ** 3, cy + r * math.sin(u) ** 3)
+                                  for u in (2 * math.pi * k / 40 for k in range(40))]
+        return _extrude([star(-.15, -.15, 1.25), star(.95, .95, .38)], .3, joins=5)
+    elif name == "brackets":  # </>
+        lt = [(-.45, .85), (-1.35, 0), (-.45, -.85), (-.28, -.62), (-.98, 0), (-.28, .62)]
+        return _extrude([lt, [(-x, y) for x, y in lt], [(.2, 1), (.42, 1), (-.2, -1), (-.42, -1)]], .4)
+    elif name == "browser":  # web page wireframe
+        sq = lambda x0, y0, x1, y1: [(x0, y0), (x1, y0), (x1, y1), (x0, y1)]
+        dot = lambda cx: [(cx + .06 * math.cos(2 * math.pi * k / 6), .8 + .06 * math.sin(2 * math.pi * k / 6)) for k in range(6)]
+        return _extrude([sq(-1.3, .95, 1.3, -.95), sq(-1.3, .95, 1.3, .65), dot(-1.12), dot(-.94), dot(-.76),
+                         sq(-1.1, .48, 1.1, .05), sq(-1.1, -.15, -.45, -.75), sq(-.33, -.15, .33, -.75),
+                         sq(.45, -.15, 1.1, -.75)], .16)
+    elif name == "layers":  # stacked UI components
+        v = _ring(4, 1.2, -.55, math.pi / 4) + _ring(4, 1.2, 0, math.pi / 4) + _ring(4, 1.2, .55, math.pi / 4)
+        return v, _loop(0, 4) + _loop(4, 4) + _loop(8, 4)
+    elif name == "database":
+        v = _ring(24, 1, .9) + _ring(24, 1, .3) + _ring(24, 1, -.3) + _ring(24, 1, -.9)
+        return v, (_loop(0, 24) + _loop(24, 24) + _loop(48, 24) + _loop(72, 24)
+                   + [(k + 24 * r, k + 24 * r + 24) for k in (0, 6, 12, 18) for r in range(3)])
+    elif name == "football":  # truncated icosahedron, the classic soccer ball
+        iv, ie = shape("icosahedron")
+        v = [tuple(a + (b - a) * f for a, b in zip(iv[i], iv[j])) for i, j in ie for f in (1 / 3, 2 / 3)]
+        return v, _nearest(v)
+    else:  # icosahedron
+        v = [(-1, p, 0), (1, p, 0), (-1, -p, 0), (1, -p, 0), (0, -1, p), (0, 1, p),
+             (0, -1, -p), (0, 1, -p), (p, 0, -1), (p, 0, 1), (-p, 0, -1), (-p, 0, 1)]
+    return v, _nearest(v)
+
+
+INNER = {"icosahedron", "dodecahedron", "octahedron", "tetrahedron", "cube", "pyramid", "star", "prism", "gem"}
+
+
+def _chains(e):
+    """Group edges into connected runs so each run is one 'M x y L x y x y ...' path command."""
+    adj, used, out = {}, set(), []
+    for k, (i, j) in enumerate(e):
+        adj.setdefault(i, []).append((k, j))
+        adj.setdefault(j, []).append((k, i))
+    for k, (i, j) in enumerate(e):
+        if k in used:
+            continue
+        used.add(k)
+        run, end = [i, j], j
+        while True:
+            nxt = next(((kk, o) for kk, o in adj[end] if kk not in used), None)
+            if not nxt:
+                break
+            used.add(nxt[0])
+            run.append(nxt[1])
+            end = nxt[1]
+        out.append(run)
+    return out
+
+
+def wire_frames(cx, cy, r, frames, spin=1, tilt=0.45, phase=0.0, kind=SHAPE):
+    shapes = [shape(kind, f / frames) for f in range(frames)]
+    chains = _chains(shapes[0][1])
+    n = max(math.dist((0, 0, 0), q) for v, _ in shapes for q in v)
     paths, pts = [], []
-    for f in range(frames):
+    for f, (v, _) in enumerate(shapes):
         a = spin * 2 * math.pi * f / frames + phase
         b = tilt + 0.18 * math.sin(2 * math.pi * f / frames)
         proj = []
         for x, y, z in v:
-            x, y, z = x / n, y / n, z / n
+            x, y, z = x / n, -y / n, z / n  # model space is y-up, screen is y-down
             x, z = x * math.cos(a) + z * math.sin(a), -x * math.sin(a) + z * math.cos(a)
             y, z = y * math.cos(b) - z * math.sin(b), y * math.sin(b) + z * math.cos(b)
             k = 3.2 / (3.2 + z)
             proj.append((cx + x * r * k, cy + y * r * k))
-        paths.append(" ".join(f"M{proj[i][0]:.1f} {proj[i][1]:.1f}L{proj[j][0]:.1f} {proj[j][1]:.1f}" for i, j in e))
+        paths.append("".join(f"M{proj[c[0]][0]:.1f} {proj[c[0]][1]:.1f}L" + " ".join(f"{proj[i][0]:.1f} {proj[i][1]:.1f}" for i in c[1:])
+                             for c in chains))
         pts.append(proj)
     return paths, pts
 
 
-def wireframe(cx, cy, r, dur=16):
+def wireframe(cx, cy, r, dur=16, kind=SHAPE):
     out = []
-    for rr, spin, col, op, sw in ((r, 1, CRIM, 0.95, 1.4), (r * 0.46, -1, WINE, 0.8, 1)):
-        paths, pts = wire_frames(cx, cy, rr, 60, spin)
+    layers = ((r, 1, CRIM, 0.95, 1.4), (r * 0.46, -1, WINE, 0.8, 1))
+    for rr, spin, col, op, sw in layers if kind in INNER else layers[:1]:
+        paths, pts = wire_frames(cx, cy, rr, 60, spin, kind=kind)
         vals = ";".join(paths + [paths[0]])
-        out.append(f'<path fill="none" stroke="{col}" stroke-width="{sw}" opacity="{op}" filter="url(#glow)">'
+        out.append(f'<path fill="none" stroke="{col}" stroke-width="{sw}" stroke-linejoin="round" opacity="{op}" filter="url(#glow)">'
                    f'<animate attributeName="d" dur="{dur}s" repeatCount="indefinite" values="{vals}"/></path>')
         if rr == r:
-            for k in range(12):
+            for k in range(len(pts[0]) if len(pts[0]) <= 20 else 0):  # no vertex dots on dense meshes
                 xs = ";".join(f"{p[k][0]:.1f}" for p in pts + [pts[0]])
                 ys = ";".join(f"{p[k][1]:.1f}" for p in pts + [pts[0]])
                 out.append(f'<circle r="2.6" fill="{BLUSH}"><animate attributeName="cx" dur="{dur}s" repeatCount="indefinite" values="{xs}"/>'
