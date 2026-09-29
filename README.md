@@ -1,37 +1,16 @@
-# Heyy! I'm Lorenzo Pedrozo 👋
-Software Engineering Student • Technology Intern @ MBRF • Full Stack Developer • React | TypeScript | C#
+<!-- Profile dashboard: rebuilt daily by .github/workflows/profile.yml from build_profile.py -->
+<p align="center">
+  <img src="./dashboard.svg" width="100%" alt="Lorenzo Pedrozo — Full-Stack Developer, AI & Chatbots, Technology Intern @ MBRF. Software Engineering student in Curitiba, Brazil." />
+</p>
 
-[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/lorenzo-pedrozo-37b3192a9)
-[![Email Badge](https://img.shields.io/badge/lorenzopedrozo1106@gmail.com-red?logo=gmail&logoColor=white)](mailto:lorenzopedrozo1106@gmail.com)
-![Profile Views](https://komarev.com/ghpvc/?username=LoPedrozo&color=blue)
+<p align="center">
+  <a href="https://www.linkedin.com/in/lorenzo-pedrozo-37b3192a9"><img src="./btn-linkedin.svg" height="44" alt="LinkedIn" /></a>
+  <a href="mailto:lorenzopedrozo1106@gmail.com"><img src="./btn-email.svg" height="44" alt="Email" /></a>
+</p>
 
----
-
-### 👨‍💻 About me
-- 🇧🇷 Software Engineering student (2024-2028) based in Curitiba, Brazil.
-- 💼 Currently a **Technology Intern at MBRF**, working on Logistics Projects (SAP & ServiceNow).
-- 🔭 Building end-to-end web applications, with a strong focus on modern **Front-end architectures** (React/TS) and robust **REST APIs** (C#).
-- 🎯 Goal: keep growing in software development, combining my internship experience with hands-on personal projects.
-- ⚡ Fun fact: When I'm not coding, I'm probably testing the limits of my custom PC build on AAA games or following sports.
-
-### 🛠️ Tech stack
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dot-net/dot-net-plain-wordmark.svg" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" width="40" height="40"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" width="40" height="40"/>
-
-### 🚀 Featured projects
-| Project | Stack | Description |
-|---------|-------|-------------|
-| **[Novant Football Gear](https://github.com/LoPedrozo/novant-football-gear)** | React · TypeScript · Supabase · Tailwind | E-commerce SPA featuring a dynamic catalog, hybrid cart synchronization, and OAuth authentication. |
-| **[Minhas Finanças](https://github.com/LoPedrozo/financias-app)** | React · TypeScript · Supabase · Recharts | Personal finance dashboard with interactive charts, categorized entries, and Row Level Security (RLS) data isolation. |
-| **[Task Management API](https://github.com/LoPedrozo/API_de_Tarefas)** | C# · ASP.NET Core · Entity Framework · SQLite | Modular RESTful API with full CRUD operations, database integration, and separation of concerns. |
-| **[Fadary Beauty Showcase](https://github.com/LoPedrozo/fadary-beauty-showcase)** | React · TypeScript · Framer Motion · Vite | Highly responsive institutional website focused on UI/UX, reusable components, and smooth animations. |
-
-### 🧩 Currently learning
-- Advanced state management and data fetching (TanStack Query)
-- Backend architecture, API design, and relational databases
-- Clean Code practices and Software Architecture principles
-
----
-
-### 🤝 Let's connect
-Curious about my projects or have an opportunity in mind?
-**DM me on LinkedIn** or send me an **email** — I'd love to chat!
+<p align="center">
+  <a href="https://github.com/LoPedrozo/novant-football-gear"><img src="./btn-novant.svg" height="44" alt="Novant Football Gear repo" /></a>
+  <a href="https://github.com/LoPedrozo/financias-app"><img src="./btn-financas.svg" height="44" alt="Minhas Finanças repo" /></a>
+  <a href="https://github.com/LoPedrozo/API_de_Tarefas"><img src="./btn-tarefas.svg" height="44" alt="Task Management API repo" /></a>
+  <a href="https://github.com/LoPedrozo/fadary-beauty-showcase"><img src="./btn-fadary.svg" height="44" alt="Fadary Beauty Showcase repo" /></a>
+</p>
