@@ -31,6 +31,6 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
-          git add dashboard.svg btn-*.svg
+          git add dashboard.svg btn-*.svg README.md
           git commit -m "Update profile dashboard" || exit 0
           git push

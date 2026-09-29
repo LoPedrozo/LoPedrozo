@@ -11,7 +11,7 @@ Live data comes from the GitHub GraphQL API (env GH_TOKEN, needs read:user).
 If the token is missing or a call fails, fallback values are used so the
 build never breaks. Standard library only: no pip install needed.
 """
-import base64, datetime as dt, json, math, os, textwrap, urllib.request
+import base64, datetime as dt, hashlib, json, math, os, re, textwrap, urllib.request
 from xml.sax.saxutils import escape
 
 # Works with a flat repo (all files in the root) or with scripts/ + profile/ folders
@@ -769,6 +769,20 @@ def main():
         with open(os.path.join(OUT, f"{name}.svg"), "w", encoding="utf-8") as f:
             f.write(button(label))
     print("built", os.path.getsize(os.path.join(OUT, "dashboard.svg")) // 1024, "KB")
+    bust_cache()
+
+
+def bust_cache():
+    """Point README at dashboard.svg?v=<content hash> so browsers never show a stale copy."""
+    readme = os.path.join(ROOT, "README.md")
+    with open(os.path.join(OUT, "dashboard.svg"), "rb") as f:
+        v = hashlib.sha1(f.read()).hexdigest()[:10]
+    with open(readme, encoding="utf-8") as f:
+        text = f.read()
+    new = re.sub(r"dashboard\.svg(\?v=[0-9a-f]*)?", f"dashboard.svg?v={v}", text)
+    if new != text:
+        with open(readme, "w", encoding="utf-8") as f:
+            f.write(new)
 
 
 if __name__ == "__main__":
