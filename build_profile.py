@@ -37,7 +37,6 @@ NAME = "LORENZO PEDROZO"
 ROLES = "FULL-STACK DEVELOPER // PROJECT MANAGER // TECH INTERN @ MBRF"
 STATUS = [  # the typing line cycles through these
     "> status: working at MBRF & building full-stack apps in Curitiba",
-    "> status: leading LIGA APP as project manager",
     "> status: studying Software Engineering @ Positivo",
     "> olá, mundo! bora construir algo juntos?",
 ]
