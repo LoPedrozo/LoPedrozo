@@ -34,7 +34,7 @@ CW = W - 2 * PAD  # content width
 
 # ── content ──────────────────────────────────────────────────────────────
 NAME = "LORENZO PEDROZO"
-ROLES = "FULL-STACK DEVELOPER // AI & CHATBOTS // TECH INTERN @ MBRF"
+ROLES = "FULL-STACK DEVELOPER // PROJECT MANAGER // TECH INTERN @ MBRF"
 STATUS = "> status: working at MBRF & building full-stack apps in Curitiba"
 # 3D symbol in the header. AI: neural, robot, chat, sparkle, chip.
 # Frontend: atom, brackets, browser, layers. Full-stack & personal: database, football, monogram.
@@ -44,13 +44,13 @@ SHAPE = "robot"
 PROFILE = [
     ("user", "Lorenzo Garcia Pedrozo"),
     ("role", "Full-Stack Developer (in training)"),
-    ("", "AI & Chatbots enthusiast"),
+    ("", "Project Manager @ LIGA APP"),
     ("now", "Technology Intern @ MBRF · Logistics Projects"),
     ("education", "Software Engineering @ Universidade Positivo → 2028"),
     ("base", "Curitiba, Brazil"),
     ("languages", "[ Portuguese, English ]"),
     ("core_stack", "React · TypeScript · C# / .NET · Python"),
-    ("focus", "chatbots · AI engineering · full-stack web"),
+    ("focus", "full-stack web · project management · UI/UX"),
     ("motto", "learn by building → ship it → iterate"),
 ]
 PROJECTS = [
@@ -79,7 +79,7 @@ PROJECTS = [
 PRINCIPLES = [
     ("LEARN BY BUILDING", "every new concept turns into a real, deployed project"),
     ("END-TO-END OWNERSHIP", "from React/TS interfaces to C# REST APIs and a real database"),
-    ("AI THAT HELPS PEOPLE", "chatbots grounded in real data, with a clear hand-off to humans"),
+    ("SHIP AS A TEAM", "clear roles, sprint rituals, code review and QA before every deploy"),
     ("UI THAT FEELS GOOD", "responsive layouts, reusable components and smooth motion"),
 ]
 BUTTONS = [  # (file, label) — links live in README.md
@@ -701,7 +701,7 @@ def dashboard(d):
     overlay = (f'<rect width="{W}" height="{H}" fill="url(#scan)" pointer-events="none"/>'
                f'<rect width="{W}" height="140" fill="url(#sweep)"><animate attributeName="y" values="-140;{H}" dur="9s" repeatCount="indefinite"/></rect>')
     return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}">'
-            f'<title>Lorenzo Pedrozo · Full-Stack Developer · AI &amp; Chatbots</title>'
+            f'<title>Lorenzo Pedrozo · Full-Stack Developer · Project Manager</title>'
             f'{DEFS}<rect width="{W}" height="{H}" fill="{BG}"/>{"".join(parts)}{frame}{overlay}</svg>')
 
 
