@@ -35,12 +35,18 @@ CW = W - 2 * PAD  # content width
 # ── content ──────────────────────────────────────────────────────────────
 NAME = "LORENZO PEDROZO"
 ROLES = "FULL-STACK DEVELOPER // PROJECT MANAGER // TECH INTERN @ MBRF"
-STATUS = "> status: working at MBRF & building full-stack apps in Curitiba"
+STATUS = [  # the typing line cycles through these
+    "> status: working at MBRF & building full-stack apps in Curitiba",
+    "> status: leading LIGA APP as project manager",
+    "> status: studying Software Engineering @ Positivo",
+    "> olá, mundo! bora construir algo juntos?",
+]
 # 3D symbol in the header. AI: neural, robot, chat, sparkle, chip.
-# Frontend: atom, brackets, browser, layers. Full-stack & personal: database, football, monogram.
+# Frontend: atom, brackets, browser, layers. Full-stack & personal: database, football, monogram,
+# greenhouse (Jardim Botânico de Curitiba).
 # Geometric: icosahedron, dodecahedron, octahedron, tetrahedron, cube, tesseract, pyramid, star,
 # prism, gem, globe, torus, geodesic, mobius, dna. Advanced: hypercube (4D), knot, sierpinski.
-SHAPE = "robot"
+SHAPE = "greenhouse"
 PROFILE = [
     ("user", "Lorenzo Garcia Pedrozo"),
     ("role", "Full-Stack Developer (in training)"),
@@ -399,6 +405,36 @@ def shape(name, t=0.0):
         iv, ie = shape("icosahedron")
         v = [tuple(a + (b - a) * f for a, b in zip(iv[i], iv[j])) for i, j in ie for f in (1 / 3, 2 / 3)]
         return v, _nearest(v)
+    elif name == "greenhouse":  # Jardim Botânico de Curitiba: domed centre, vaulted wings
+        v, e = [], []
+        def add(q):
+            v.append(q)
+            return len(v) - 1
+        def line(pts, closed=False):
+            ids = [add(q) for q in pts]
+            e.extend(zip(ids, ids[1:] + ids[:1] if closed else ids[1:]))
+            return ids
+        c, base = .55, -.9
+        dirs = [(-1, -1), (0, -1), (1, -1), (1, 0), (1, 1), (0, 1), (-1, 1), (-1, 0)]
+        levels = [(1, base), (1, .1)] + [(math.cos(k * math.pi / 2) ** .6, .1 + .85 * math.sin(k * math.pi / 2)) for k in (.25, .5, .75)]
+        rings = [line([(sc * c * x, y, sc * c * z) for x, z in dirs], closed=True) for sc, y in levels]
+        for a, b in zip(rings, rings[1:]):
+            e.extend(zip(a, b))
+        top = add((0, .95, 0))
+        e += [(i, top) for i in rings[-1]] + [(top, add((0, 1.2, 0)))]
+        for zf in (-c, c):  # entrance arches, front and back
+            line([(-.2, base, zf), (-.2, -.45, zf)] + [(.2 * math.cos(a), -.45 + .2 * math.sin(a), zf)
+                  for a in (math.pi * k / 6 for k in range(6, -1, -1))] + [(.2, base, zf)])
+        for side in (-1, 1):  # barrel-vaulted wings
+            prev = None
+            for x in (.55, .87, 1.18, 1.5):
+                prof = [(-.45, base), (-.45, -.25)] + [(.45 * math.cos(a), -.25 + .45 * math.sin(a))
+                        for a in (math.pi * k / 6 for k in range(5, 0, -1))] + [(.45, -.25), (.45, base)]
+                arch = line([(side * x, y, z) for z, y in prof])
+                if prev:
+                    e.extend(zip(prev, arch))
+                prev = arch
+        return v, e
     else:  # icosahedron
         v = [(-1, p, 0), (1, p, 0), (-1, -p, 0), (1, -p, 0), (0, -1, p), (0, 1, p),
              (0, -1, -p), (0, 1, -p), (p, 0, -1), (p, 0, 1), (-p, 0, -1), (-p, 0, 1)]
@@ -488,20 +524,32 @@ def header():
     o.append(f'<rect y="{hz}" width="{W}" height="1.2" fill="url(#fadeLineC)"/>')
     # HUD corners + tags
     o.append(f'<path d="M20 40 V20 H40 M{W-40} 20 H{W-20} V40" stroke="{WINE}" stroke-width="1.5" fill="none"/>')
-    o.append(t(52, 34, "[ SYS://LORENZO.DEV ]  BUILD 2026", 11, DIM, ls=1))
+    o.append(t(52, 34, "[ SYS://LORENZO.DEV ]  BUILD 2026  ·  CURITIBA · BR · UTC-3", 11, DIM, ls=1))
     o.append(f'<circle cx="{W-118}" cy="30" r="4" fill="{CRIM}"><animate attributeName="opacity" values="1;.2;1" dur="1.6s" repeatCount="indefinite"/></circle>')
     o.append(t(W - 108, 34, "ONLINE", 11, CRIM, 700, ls=2))
     # name with glow
     o.append(t(PAD + 8, 122, NAME, 52, CRIM, 800, ls=6, extra='filter="url(#glowBig)" opacity=".75"'))
     o.append(t(PAD + 8, 122, NAME, 52, BLUSH, 800, ls=6))
     o.append(t(PAD + 10, 158, ROLES, 14, CRIM, 600, ls=1.6))
-    # typing line
-    line = STATUS
-    tw = len(line) * 9.05
-    o.append(f'<clipPath id="typeClip"><rect x="{PAD+8}" y="178" height="30" width="0">'
-             f'<animate attributeName="width" values="0;{tw:.0f};{tw:.0f};0" keyTimes="0;.45;.9;1" dur="7s" repeatCount="indefinite"/></rect></clipPath>')
-    o.append(f'<g clip-path="url(#typeClip)">{t(PAD + 10, 198, line, 15, MUTED)}</g>')
-    o.append(f'<rect y="185" width="9" height="17" fill="{CRIM}"><animate attributeName="x" values="{PAD+10};{PAD+12+tw:.0f};{PAD+12+tw:.0f};{PAD+10}" keyTimes="0;.45;.9;1" dur="7s" repeatCount="indefinite"/>'
+    # typing line: each status gets a slot of the cycle (type, hold, erase)
+    n, slot = len(STATUS), 6
+    def keys(frames):  # [(time 0..1, value)] -> keyTimes/values, dropping duplicate times
+        out = []
+        for k, v in frames:
+            if not out or k > out[-1][0] + 1e-9:
+                out.append((k, v))
+        return ";".join(f"{k:.4f}" for k, _ in out), ";".join(f"{v:.0f}" for _, v in out)
+    cursor = []
+    for i, line in enumerate(STATUS):
+        tw, s0, d = len(line) * 9.05, i / n, 1 / n
+        frames = [(s0, 0), (s0 + .4 * d, tw), (s0 + .85 * d, tw), (s0 + d, 0)]
+        kt, vals = keys([(0, 0)] + frames + [(1, 0)])
+        o.append(f'<clipPath id="typeClip{i}"><rect x="{PAD+8}" y="178" height="30" width="0">'
+                 f'<animate attributeName="width" values="{vals}" keyTimes="{kt}" dur="{n*slot}s" repeatCount="indefinite"/></rect></clipPath>')
+        o.append(f'<g clip-path="url(#typeClip{i})">{t(PAD + 10, 198, line, 15, MUTED)}</g>')
+        cursor += frames
+    kt, vals = keys([(k, PAD + 10 + (v + 2 if v else 0)) for k, v in [(0, 0)] + cursor + [(1, 0)]])
+    o.append(f'<rect y="185" width="9" height="17" fill="{CRIM}"><animate attributeName="x" values="{vals}" keyTimes="{kt}" dur="{n*slot}s" repeatCount="indefinite"/>'
              f'<animate attributeName="opacity" values="1;0;1" dur=".9s" repeatCount="indefinite"/></rect>')
     o.append(wireframe(850, 132, 96))
     return "".join(o), H
