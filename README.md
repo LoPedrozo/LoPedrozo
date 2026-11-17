@@ -1,6 +1,6 @@
 <!-- Profile dashboard: rebuilt daily by .github/workflows/profile.yml from build_profile.py -->
 <p align="center">
-  <img src="./dashboard.svg?v=d47a4b571b" width="100%" alt="Lorenzo Pedrozo — Full-Stack Developer, Project Manager of LIGA APP, Technology Intern @ MBRF. Software Engineering student in Curitiba, Brazil." />
+  <img src="./dashboard.svg?v=4a8e259c04" width="100%" alt="Lorenzo Pedrozo — Full-Stack Developer, Project Manager of LIGA APP, Technology Intern @ MBRF. Software Engineering student in Curitiba, Brazil." />
 </p>
 
 <p align="center">
